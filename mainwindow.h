@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "Languages.h"
 #include "languageinfo.h"
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,7 +19,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void filterBtnPressed(int mapping);
+    void display_languages(QStringList languageList);
 
 private:
     Ui::MainWindow *ui;
@@ -28,5 +31,6 @@ private:
     LanguageInfo *mediumInfo = new LanguageInfo(Category::medium);
     LanguageInfo *hardInfo = new LanguageInfo(Category::hard);
     LanguageInfo *hardestInfo = new LanguageInfo(Category::hardest);
+    QPushButton *filterBtns[6];
 };
 #endif // MAINWINDOW_H
