@@ -42,8 +42,8 @@ LanguageInfo::LanguageInfo(Category category)
 
          case Category::hardest:
             setDescription("Languages which are exceptionally difficult for native English speakers");
-            setHoursToLearn(88);
-            setWeeksToLearn(2200);
+            setHoursToLearn(2200);
+            setWeeksToLearn(88);
             break;
 
          default:
