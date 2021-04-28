@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>645</width>
-    <height>440</height>
+    <width>528</width>
+    <height>349</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,17 +15,17 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QPushButton" name="btn_filter_all">
+    <item row="1" column="4">
+     <widget class="QPushButton" name="btn_filter_hard">
       <property name="text">
-       <string>All</string>
+       <string>Hard</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="pushButton">
+    <item row="1" column="5">
+     <widget class="QPushButton" name="btn_filter_hardest">
       <property name="text">
-       <string>PushButton</string>
+       <string>Hardest</string>
       </property>
      </widget>
     </item>
@@ -43,6 +43,27 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="0" colspan="6">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Looking to learn a new language? Use this application to find out how diffucult a language is to learn and find information about them!</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="3">
      <widget class="QPushButton" name="btn_filter_medium">
       <property name="text">
@@ -50,17 +71,10 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="4">
-     <widget class="QPushButton" name="btn_filter_hard">
+    <item row="1" column="0">
+     <widget class="QPushButton" name="btn_filter_all">
       <property name="text">
-       <string>Hard</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="5">
-     <widget class="QPushButton" name="btn_filter_hardest">
-      <property name="text">
-       <string>Hardest</string>
+       <string>All</string>
       </property>
      </widget>
     </item>
@@ -74,22 +88,6 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="6">
-     <widget class="QLabel" name="label">
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="text">
-       <string>Would you like to learn a new language? Use this application to find out how diffucult a language is to learn and make your decision!</string>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-      <property name="margin">
-       <number>0</number>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -97,7 +95,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>645</width>
+     <width>528</width>
      <height>20</height>
     </rect>
    </property>

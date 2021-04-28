@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "Languages.h"
 #include "languageinfo.h"
+#include <QUrl>
+#include <QDesktopServices>
 
 namespace Ui {
 class DialogLang;
@@ -18,8 +20,17 @@ public:
     ~DialogLang();
 
 
+private slots:
+
+
+    void on_buttonOpenBrowser_clicked();
+
+
+
 private:
     Languages languages;
+    QString language_;
+    QString createUrl(QString language);
     Ui::DialogLang *ui;
 };
 

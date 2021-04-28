@@ -85,7 +85,7 @@ Category MainWindow::findCategoryOf(QString language)
             (languages.hard.contains(language, Qt::CaseInsensitive)) return Category::hard;
     else if
             (languages.hardest.contains(language, Qt::CaseInsensitive)) return Category::hardest;
-
+        else return Category::all;
 
 }
 
