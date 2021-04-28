@@ -12,6 +12,7 @@ DialogLang::DialogLang(QWidget *parent, QString language, Category category) :
 
     LanguageInfo languageInfo(category);
     QString description = languageInfo.getDescription();
+    description.prepend(language + " ");
     QString weeks = QString::number(languageInfo.getWeeksToLearn());
     QString hours = QString::number(languageInfo.getHoursToLearn());
     QString labelTimeToLearn = "Time to learn the language is approximately: ";
