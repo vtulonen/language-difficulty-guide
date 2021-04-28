@@ -4,6 +4,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QSignalMapper>
+#include "dialoglang.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -57,4 +58,34 @@ void MainWindow::display_languages(QStringList languageList)
 
 
 
+
+
+void MainWindow::on_listWidgetLanguages_itemClicked(QListWidgetItem *item)
+{
+
+    QString selectedLang = item->text();
+
+    DialogLang dialog(this, selectedLang, findCategoryOf(selectedLang));
+    dialog.setModal(true);
+
+    if (dialog.exec()) {
+       std::cout << item->text().toStdString() << std::endl;
+    }
+}
+
+Category MainWindow::findCategoryOf(QString language)
+{
+    if
+            (languages.easiest.contains(language, Qt::CaseInsensitive)) return Category::easiest;
+    else if
+            (languages.easy.contains(language, Qt::CaseInsensitive)) return Category::easy;
+    else if
+            (languages.medium.contains(language, Qt::CaseInsensitive)) return Category::medium;
+    else if
+            (languages.hard.contains(language, Qt::CaseInsensitive)) return Category::hard;
+    else if
+            (languages.hardest.contains(language, Qt::CaseInsensitive)) return Category::hardest;
+
+
+}
 
