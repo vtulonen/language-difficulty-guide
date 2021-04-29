@@ -5,7 +5,9 @@
 #include <QUrl>
 #include <QSignalMapper>
 #include "dialoglang.h"
-
+#include <QWindow>
+#include <QIcon>
+#include <QAction>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QIcon icon(":/icons/window_icon.ico");
+    setWindowIcon(icon);
+    setWindowTitle("Language Difficulties");
+
     display_languages( languages_.all);
     filterBtns[0] = ui->btn_filter_all;
     filterBtns[1] = ui->btn_filter_easiest;
