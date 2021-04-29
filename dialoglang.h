@@ -24,7 +24,8 @@ private slots:
     void on_buttonOpenBrowser_clicked();
 
 private:
-    Languages languages;
+    Languages languages_;
+    LanguagesNoTr languagesNoTr_;
     QString language_;
     QString createUrl(QString language);
     Ui::DialogLang *ui;

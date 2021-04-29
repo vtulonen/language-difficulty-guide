@@ -9,7 +9,7 @@ DialogLang::DialogLang(QWidget *parent, QString language, Category category, boo
 
     ui->setupUi(this);
     QString titleText = language;
-    if (random) titleText.prepend("Randomly Picked Language For You: ");
+    if (random) titleText.prepend(tr("Randomly Picked Language For You: "));
     this->setWindowTitle(titleText);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
@@ -19,12 +19,13 @@ DialogLang::DialogLang(QWidget *parent, QString language, Category category, boo
     description.prepend(language + " ");
     QString weeks = QString::number(languageInfo.getWeeksToLearn());
     QString hours = QString::number(languageInfo.getHoursToLearn());
-    QString labelTimeToLearn = "Time to learn the language is approximately: ";
-    labelTimeToLearn += hours + " hours over ";
-    labelTimeToLearn += weeks + " weeks.";
+    QString labelTimeToLearn = tr("Time to learn the language is approximately: ");
+    labelTimeToLearn += hours + tr(" hours over ");
+    labelTimeToLearn += weeks + tr(" weeks.");
     ui->labelDescription->setText(description);
     ui->labelTimeToLearn->setText(labelTimeToLearn);
     ui->buttonOpenBrowser->setToolTip(createUrl(language_));
+    ui->buttonBox->button(QDialogButtonBox::Close)->setText(tr("Close"));
 }
 
 DialogLang::~DialogLang()
@@ -34,6 +35,9 @@ DialogLang::~DialogLang()
 
 QString DialogLang::createUrl(QString language)
 {
+    int index = languages_.all.indexOf(language);
+    language = languagesNoTr_.all[index];
+
     language = language.toLower();
     QString baseUrl = "https://effectivelanguagelearning.com/language-guide/";
     QString basePostfix = "-language/";

@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QRandomGenerator>
+#include <QLocale>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -42,5 +43,7 @@ private:
     QPushButton *filterBtns[6];
     QRandomGenerator *randomGenerator_ = QRandomGenerator::system();
     void closeEvent(QCloseEvent *event);
+    QString locale_ = QLocale::system().name();
+
 };
 #endif // MAINWINDOW_H

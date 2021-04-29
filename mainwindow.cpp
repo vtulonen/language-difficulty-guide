@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     QIcon icon(":/icons/window_icon.ico");
     setWindowIcon(icon);
-    setWindowTitle("Language Difficulties");
+    setWindowTitle(tr("Language Difficulties"));
 
     display_languages( languages_.all);
     filterBtns[0] = ui->btn_filter_all;
@@ -67,15 +67,12 @@ void MainWindow::display_languages(QStringList languageList)
 
 void MainWindow::on_listWidgetLanguages_itemClicked(QListWidgetItem *item)
 {
-
     QString selectedLang = item->text();
 
     DialogLang dialog(this, selectedLang, findCategoryOf(selectedLang));
     dialog.setModal(true);
+    dialog.exec();
 
-    if (dialog.exec()) {
-       std::cout << item->text().toStdString() << std::endl;
-    }
 }
 
 Category MainWindow::findCategoryOf(QString language)
@@ -97,8 +94,16 @@ Category MainWindow::findCategoryOf(QString language)
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     event->ignore();
-    if (QMessageBox::Yes == QMessageBox::question(this, "Close Appliaction", "Are you sure you want to Exit?", QMessageBox::Yes | QMessageBox::No))
-    {
+
+    QMessageBox messageBox(QMessageBox::Question,
+                tr("Closing Appliaction"),
+                tr("Are you sure you want to Exit?"),
+                QMessageBox::Yes | QMessageBox::No,
+                this);
+        messageBox.setButtonText(QMessageBox::Yes, tr("Yes"));
+        messageBox.setButtonText(QMessageBox::No, tr("No"));
+
+    if (messageBox.exec() == QMessageBox::Yes) {
         event->accept();
     }
 
