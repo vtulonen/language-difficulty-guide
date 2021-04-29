@@ -8,7 +8,7 @@
 #include <QWindow>
 #include <QIcon>
 #include <QAction>
-
+#include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

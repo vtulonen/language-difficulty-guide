@@ -2,14 +2,20 @@
 
 #include <QApplication>
 #include <QTranslator>
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+
     QTranslator translator;
-    translator.load("harjoitustyo_fi_FI");
-    a.installTranslator(&translator);
+
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Translation", "Would you like to translate the app into Finnish?", QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        translator.load("harjoitustyo_fi_FI");
+        a.installTranslator(&translator);
+    }
 
 
     MainWindow w;
