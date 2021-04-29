@@ -16,16 +16,12 @@ class DialogLang : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogLang(QWidget *parent = nullptr, QString language = "", Category category = Category::all);
+    explicit DialogLang(QWidget *parent = nullptr, QString language = "", Category category = Category::all, bool random = false);
     ~DialogLang();
 
 
 private slots:
-
-
     void on_buttonOpenBrowser_clicked();
-
-
 
 private:
     Languages languages;

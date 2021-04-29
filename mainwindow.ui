@@ -15,35 +15,35 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="4">
-     <widget class="QPushButton" name="btn_filter_hard">
+    <item row="1" column="1">
+     <widget class="QPushButton" name="btn_filter_all">
       <property name="text">
-       <string>Hard</string>
+       <string>All</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="5">
+    <item row="1" column="6">
      <widget class="QPushButton" name="btn_filter_hardest">
       <property name="text">
        <string>Hardest</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QPushButton" name="btn_filter_easiest">
+    <item row="1" column="4">
+     <widget class="QPushButton" name="btn_filter_medium">
       <property name="text">
-       <string>Easiest</string>
+       <string>Medium</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="btn_filter_easy">
+    <item row="1" column="5">
+     <widget class="QPushButton" name="btn_filter_hard">
       <property name="text">
-       <string>Easy</string>
+       <string>Hard</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="6">
+    <item row="0" column="1" colspan="6">
      <widget class="QLabel" name="label">
       <property name="font">
        <font>
@@ -64,27 +64,47 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="btn_filter_easiest">
+      <property name="text">
+       <string>Easiest</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="3">
-     <widget class="QPushButton" name="btn_filter_medium">
+     <widget class="QPushButton" name="btn_filter_easy">
       <property name="text">
-       <string>Medium</string>
+       <string>Easy</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="btn_filter_all">
-      <property name="text">
-       <string>All</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0" colspan="6">
+    <item row="4" column="1" colspan="6">
      <widget class="QListWidget" name="listWidgetLanguages">
       <property name="isWrapping" stdset="0">
        <bool>true</bool>
       </property>
       <property name="sortingEnabled">
        <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="6">
+     <widget class="QPushButton" name="btn_random">
+      <property name="toolTip">
+       <string extracomment="From Selected Category"/>
+      </property>
+      <property name="toolTipDuration">
+       <number>1</number>
+      </property>
+      <property name="text">
+       <string>Pick Random</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="5">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Can't Decide?</string>
       </property>
      </widget>
     </item>

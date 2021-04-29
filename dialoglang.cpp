@@ -2,14 +2,16 @@
 #include "ui_dialoglang.h"
 #include <iostream>
 
-DialogLang::DialogLang(QWidget *parent, QString language, Category category) :
+DialogLang::DialogLang(QWidget *parent, QString language, Category category, bool random) :
     QDialog(parent),
     ui(new Ui::DialogLang)
 {
 
     ui->setupUi(this);
-    this->setWindowTitle(language);
-
+    QString titleText = language;
+    if (random) titleText.prepend("Randomly Picked Language For You: ");
+    this->setWindowTitle(titleText);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     language_ = language;
     LanguageInfo languageInfo(category);
@@ -22,8 +24,6 @@ DialogLang::DialogLang(QWidget *parent, QString language, Category category) :
     labelTimeToLearn += weeks + " weeks.";
     ui->labelDescription->setText(description);
     ui->labelTimeToLearn->setText(labelTimeToLearn);
-
-
     ui->buttonOpenBrowser->setToolTip(createUrl(language_));
 }
 
@@ -37,7 +37,6 @@ QString DialogLang::createUrl(QString language)
     language = language.toLower();
     QString baseUrl = "https://effectivelanguagelearning.com/language-guide/";
     QString basePostfix = "-language/";
-    std::cout << (baseUrl + language + basePostfix).toStdString() << std::endl;
 
     if (language == "french" || language == "italian" || language == "spanish" || language == "german") {
         return baseUrl + language;
