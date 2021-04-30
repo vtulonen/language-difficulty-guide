@@ -16,6 +16,9 @@ DialogLang::DialogLang(QWidget *parent, QString language, Category category, boo
     language_ = language;
     LanguageInfo languageInfo(category);
     QString description = languageInfo.getDescription();
+    if (language_ == "Saksa" || language_ == "German") {
+        description += tr(". Yes, this is the only language in this category!");
+    }
     description.prepend(language + " ");
     QString weeks = QString::number(languageInfo.getWeeksToLearn());
     QString hours = QString::number(languageInfo.getHoursToLearn());

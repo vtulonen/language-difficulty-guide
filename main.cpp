@@ -3,6 +3,8 @@
 #include <QApplication>
 #include <QTranslator>
 #include <iostream>
+#include <QInputDialog>
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -11,14 +13,22 @@ int main(int argc, char *argv[])
 
     QTranslator translator;
 
-    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Translation", "Would you like to translate the app into Finnish?", QMessageBox::Yes|QMessageBox::No).exec())
-    {
-        translator.load("harjoitustyo_fi_FI");
-        a.installTranslator(&translator);
+    QStringList languages;
+    languages << "English" << "Suomi";
+    bool ok;
+    QString language = QInputDialog::getItem(NULL, "Choose Language", "Language", languages, 0, 1, &ok);
+
+    if (ok) {
+        if (language == "Suomi")  translator.load("harjoitustyo_fi_FI");
+        if ( language != "English")
+        {
+            a.installTranslator(&translator);
+        }
+
+        MainWindow w;
+        w.show();
+        return a.exec();
     }
-
-
-    MainWindow w;
-    w.show();
-    return a.exec();
+    //Else
+    return 0;
 }

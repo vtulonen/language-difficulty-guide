@@ -34,22 +34,27 @@
         <translation>Satunnaisesti valittu kieli sinulle: </translation>
     </message>
     <message>
-        <location filename="dialoglang.cpp" line="22"/>
+        <location filename="dialoglang.cpp" line="20"/>
+        <source>. Yes, this is the only language in this category!</source>
+        <translation>. Kyllä, tämä on ainut kieli tässä kategoriassa!</translation>
+    </message>
+    <message>
+        <location filename="dialoglang.cpp" line="25"/>
         <source>Time to learn the language is approximately: </source>
         <translation>Oppimiseen tarvittava aika on noin </translation>
     </message>
     <message>
-        <location filename="dialoglang.cpp" line="23"/>
+        <location filename="dialoglang.cpp" line="26"/>
         <source> hours over </source>
         <translation> tuntia </translation>
     </message>
     <message>
-        <location filename="dialoglang.cpp" line="24"/>
+        <location filename="dialoglang.cpp" line="27"/>
         <source> weeks.</source>
         <translation> viikon aikana.</translation>
     </message>
     <message>
-        <location filename="dialoglang.cpp" line="28"/>
+        <location filename="dialoglang.cpp" line="31"/>
         <source>Close</source>
         <translation>Sulje</translation>
     </message>
@@ -62,54 +67,64 @@
         <translation>Kielien Vaikeusasteet</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="21"/>
+        <location filename="mainwindow.ui" line="56"/>
         <source>All</source>
         <translation>Kaikki</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="28"/>
+        <location filename="mainwindow.ui" line="107"/>
         <source>Hardest</source>
         <translation>Vaikeimmat</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="35"/>
+        <location filename="mainwindow.ui" line="87"/>
         <source>Medium</source>
         <translation>Keskivaikeat</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="42"/>
+        <location filename="mainwindow.ui" line="73"/>
         <source>Hard</source>
         <translation>Vaikeat</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="57"/>
+        <location filename="mainwindow.ui" line="36"/>
         <source>Looking to learn a new language? Use this application to find out how diffucult a language is to learn and find information about them!</source>
         <translation>Haluatko oppia uuden kielen? Tämän applikaation avulla pystyt tarkistamaan kuinka vaikeita kielet ovat, sekä lukemaan niistä lisätietoja!</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="70"/>
+        <location filename="mainwindow.ui" line="49"/>
         <source>Easiest</source>
         <translation>Helpoimmat</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="77"/>
+        <location filename="mainwindow.ui" line="21"/>
         <source>Easy</source>
         <translation>Helpot</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="91"/>
-        <source>New Item</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="105"/>
+        <location filename="mainwindow.ui" line="100"/>
         <source>Pick Random</source>
         <translation>Satunnainen Valinta</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="112"/>
+        <location filename="mainwindow.ui" line="80"/>
         <source>Can&apos;t Decide?</source>
         <translation>Etkö osaa päättää?</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="122"/>
+        <source>Note: This  guide is designed for native or well English spoken people. If you speak other languages, the difficulty levels may vary for you! </source>
+        <translation>Huom: Ohjelman ohjeet on suunniteltu natiivisti englantia puhuville, tai sitä hyvin ymmärtäville. Jos puhut muita kieliä, niin vaikeustasot saattavat vaihdella sinulle!</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="134"/>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="139"/>
+        <source>Suomi</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Close Appliaction</source>
