@@ -19,7 +19,9 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowIcon(icon);
     setWindowTitle(tr("Language Difficulties"));
 
-    display_languages( languages_.all);
+    display_languages( languages_.all); // Display languages
+
+    // add filter buttons QPushButton array
     filterBtns[0] = ui->btn_filter_all;
     filterBtns[1] = ui->btn_filter_easiest;
     filterBtns[2] = ui->btn_filter_easy;
@@ -27,6 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
     filterBtns[4] = ui->btn_filter_hard;
     filterBtns[5] = ui->btn_filter_hardest;
 
+    /**
+     * @brief signalMapper maps filter buttons to filterBtnPressed slot
+     */
     QSignalMapper *signalMapper = new QSignalMapper(this);
     connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(filterBtnPressed(int)));
     for(int i = 0; i < 6; i++){
@@ -40,9 +45,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * @brief MainWindow::filterBtnPressed calls display_languages with desired category based on mapping
+ * @param mapping number connectected to slot
+ */
 void MainWindow::filterBtnPressed(int mapping)
 {
-    ui->listWidgetLanguages->clear();
+    ui->listWidgetLanguages->clear(); // Clear exisiting
 
     switch (mapping)
     {
@@ -57,6 +66,9 @@ void MainWindow::filterBtnPressed(int mapping)
     }
 }
 
+/**
+ * @brief MainWindow::display_languages - adds language strings as items to listItemWidgetLanguages
+ */
 void MainWindow::display_languages(QStringList languageList)
 {
     for (int i=0; i<languageList.size(); i++) {
@@ -64,7 +76,10 @@ void MainWindow::display_languages(QStringList languageList)
     }
 }
 
-
+/**
+ * @brief MainWindow::on_listWidgetLanguages_itemClicked opens a dialog with language and its category as params
+ * @param item - clicked item
+ */
 void MainWindow::on_listWidgetLanguages_itemClicked(QListWidgetItem *item)
 {
     QString selectedLang = item->text();
@@ -75,6 +90,12 @@ void MainWindow::on_listWidgetLanguages_itemClicked(QListWidgetItem *item)
 
 }
 
+/**
+ * @brief MainWindow::findCategoryOf
+ * @param language
+ * check if which of languages_ lists contains the language
+ * @return enum Category for the language
+ */
 Category MainWindow::findCategoryOf(QString language)
 {
     if
@@ -91,6 +112,10 @@ Category MainWindow::findCategoryOf(QString language)
 
 }
 
+/**
+ * @brief MainWindow::closeEvent confirmation messagebox when exiting app
+ * @param event close app
+ */
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     event->ignore();
@@ -109,13 +134,16 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 }
 
+/**
+ * @brief MainWindow::on_btn_random_clicked opens a random language information dialog
+ */
 void MainWindow::on_btn_random_clicked()
 {
     QListWidget *list = ui->listWidgetLanguages;
-    int randomNum = randomGenerator_->bounded(list->count());
-    QString randomLanguage = list->item(randomNum)->text();
+    int randomNum = randomGenerator_->bounded(list->count()); // generate random number between 0 and list size
+    QString randomLanguage = list->item(randomNum)->text(); // get text of listWidgetLanguages at index randomNum
 
-    DialogLang dialog(this, randomLanguage, findCategoryOf(randomLanguage), true);
+    DialogLang dialog(this, randomLanguage, findCategoryOf(randomLanguage), true); // open dialog with random language
     dialog.setModal(true);
     dialog.exec();
 

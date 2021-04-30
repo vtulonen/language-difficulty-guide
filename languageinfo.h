@@ -4,6 +4,13 @@
 
 #include <QString>
 
+/**
+ * @brief The LanguageInfo class
+ *
+ *  Given a @category as constructor paramerter, it creates
+ *  information about the language catageory.
+ */
+
 class LanguageInfo
 {
 public:

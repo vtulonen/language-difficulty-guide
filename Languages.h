@@ -5,8 +5,14 @@
 #include <QObject>
 
 // The Foreign Service Institute (FSI) has created a list to show the approximate time you need to learn a specific language as an English speaker
-
 //Source https://effectivelanguagelearning.com/language-guide/language-difficulty/
+
+/**
+ * @brief The Languages struct
+ *  Contains the languages used in the app, also contains transalations for use in qtLingquist
+ *  languages are categorized in the struct
+ *  to be used when language name needs displaying
+ */
 
 struct Languages
 {
@@ -18,6 +24,11 @@ struct Languages
     QStringList all = easiest + easy + medium + hard + hardest;
 };
 
+
+/**
+ * @brief The LanguagesNoTr struct
+ *  Same as above without translations - to be used when computations are needed
+ */
 struct LanguagesNoTr
 {
     QStringList easiest {"Afrikaans", "Danish", "Dutch", "French", "Italian", "Norwegian", "Portuguese", "Romanian", "Spanish", "Swedish"};

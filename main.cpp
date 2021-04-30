@@ -10,7 +10,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-
+    /**
+     * @brief translator
+     * On app startup a input dialog is show and user prompted to choose language
+     * based on user choise, the translator is either installed or not
+     * if user quits here, the app wont start at all
+     */
     QTranslator translator;
 
     QStringList languages;

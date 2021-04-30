@@ -7,6 +7,13 @@
 #include <QUrl>
 #include <QDesktopServices>
 
+/**
+ *
+ * This dialog handles displaying specific data about a language
+ *
+ */
+
+
 namespace Ui {
 class DialogLang;
 }

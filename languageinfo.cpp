@@ -5,7 +5,10 @@ LanguageInfo::LanguageInfo()
 {
 
 }
-
+/**
+ * @brief LanguageInfo::LanguageInfo contains description, and time to learn the language based on @category
+ * @param category decides what values are created for the class
+ */
 LanguageInfo::LanguageInfo(Category category)
 {
     switch(category)
