@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     QString language = QInputDialog::getItem(NULL, "Choose Language", "Language", languages, 0, 1, &ok);
 
     if (ok) {
-        if (language == "Suomi")  translator.load("harjoitustyo_fi_FI");
+        if (language == "Suomi")  translator.load(":/harjoitustyo_fi_FI");
         if ( language != "English")
         {
             a.installTranslator(&translator);

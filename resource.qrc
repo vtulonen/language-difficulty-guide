@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>icons/window_icon.ico</file>
+        <file>harjoitustyo_fi_FI.qm</file>
     </qresource>
 </RCC>
